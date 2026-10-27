@@ -45,7 +45,7 @@
   <footer class="footer"><span class="brand">TK Services</span> · Shop</footer>
 </main>
 <script>
-let items=[],active='All';
+let items=[],active='All',lastSignature='',loading=false;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 function render(){
@@ -63,22 +63,37 @@ function render(){
   }).join(''):'<div class="empty">No matching items are available right now.</div>';
 }
 async function load(){
+  if(loading)return;
+  loading=true;
   try{
     let r=await fetch('https://raw.githubusercontent.com/kfairclough/kwong./master/stock/public-stock.json?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok) r=await fetch('public-stock.json?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok && !items.length) r=await fetch('public-stock.json?t='+Date.now(),{cache:'no-store'});
     if(!r.ok)throw new Error();
     const d=await r.json();
-    items=Array.isArray(d.items)?d.items:[];
+    const nextItems=Array.isArray(d.items)?d.items:[];
+    const signature=String(d.updatedAt||'')+'|'+JSON.stringify(nextItems);
+    if(signature!==lastSignature){
+      items=nextItems;
+      lastSignature=signature;
+      render();
+    }
     $('updated').textContent=d.updatedAt?'Updated '+new Date(d.updatedAt).toLocaleString():'Stock connected';
-    render();
   }catch{
-    $('updated').textContent='Stock temporarily unavailable';
-    $('grid').innerHTML='<div class="empty">Please try again shortly.</div>';
+    if(!items.length){
+      $('updated').textContent='Stock temporarily unavailable';
+      $('grid').innerHTML='<div class="empty">Please try again shortly.</div>';
+    }
+  }finally{
+    loading=false;
   }
 }
 $('search').addEventListener('input',render);
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===btn));render()}));
-load();setInterval(load,30000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)load()});
+window.addEventListener('focus',load);
+window.addEventListener('online',load);
+load();
+setInterval(load,5000);
 </script>
 </body>
 </html>
