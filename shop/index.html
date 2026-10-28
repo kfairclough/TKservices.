@@ -7,20 +7,25 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>TK Services Shop</title>
 <style>
-:root{--bg:#080808;--panel:#111;--panel2:#151515;--gold:#d8aa54;--gold2:#f2ca79;--text:#f7edda;--muted:#9f988d;--line:#3f3422;--good:#c8b06a}
-*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(circle at top,#18130b 0,#080808 32%,#080808 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}.shell{width:min(100%,980px);margin:0 auto;padding:env(safe-area-inset-top) 14px calc(26px + env(safe-area-inset-bottom))}.hero{padding:22px 2px 14px;display:flex;align-items:center;gap:13px}.mark{width:54px;height:54px;flex:0 0 54px;border:1px solid #7a5b29;border-radius:17px;background:linear-gradient(145deg,#1d160b,#0d0d0d);display:grid;place-items:center;color:var(--gold2);font-weight:950;letter-spacing:.6px;box-shadow:0 9px 30px #0008}.hero h1{font-size:22px;line-height:1.08;margin:0 0 4px;font-weight:900}.hero p{margin:0;color:var(--muted);font-size:12px}.updated{margin-top:4px;color:#746d62;font-size:10px}.searchWrap{position:sticky;top:0;z-index:10;padding:8px 0 8px;background:linear-gradient(#080808f5,#080808e8 78%,transparent);backdrop-filter:blur(12px)}.search{width:100%;height:48px;border:1px solid var(--line);border-radius:15px;background:#111;color:#fff;padding:0 15px;font-size:16px;outline:none;box-shadow:0 8px 24px #0005}.search::placeholder{color:#716b63}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 11px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{min-height:40px;border:1px solid var(--line);border-radius:999px;background:#101010;color:#d3c5aa;padding:0 14px;font-weight:700;font-size:13px;white-space:nowrap}.tab.on{background:var(--gold2);border-color:var(--gold2);color:#17120a}.summary{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:2px 0 15px}.stat{padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,#15130f,#0f0f0f)}.stat b{display:block;color:var(--gold2);font-size:22px;line-height:1}.stat span{display:block;margin-top:5px;font-size:10px;color:var(--muted)}.sectionTitle{display:flex;align-items:center;justify-content:space-between;margin:2px 2px 9px}.sectionTitle b{font-size:14px}.sectionTitle span{font-size:10px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr;gap:9px}.card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 14px 14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,#151515,#0d0d0d);box-shadow:0 8px 24px #0004}.info{min-width:0}.name{font-weight:850;font-size:15px;line-height:1.25;overflow-wrap:anywhere}.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.pill{font-size:10px;color:#b6aa98;border:1px solid #332b20;border-radius:999px;padding:4px 7px;background:#0d0d0d}.stock{flex:0 0 auto;min-width:70px;text-align:right}.stock strong{display:block;font-size:24px;color:var(--gold2);line-height:1}.stock span{display:block;margin-top:5px;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.low{color:#cfba7c!important}.empty{padding:28px 16px;text-align:center;border:1px dashed var(--line);border-radius:17px;color:var(--muted);background:#0e0e0e}.footer{text-align:center;color:#6e675d;font-size:10px;padding:22px 0 6px}.brand{color:#9a8050;font-weight:800}@media(min-width:680px){.shell{padding-left:22px;padding-right:22px}.summary{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:26px}}
+:root{--bg:#080808;--panel:#111;--panel2:#151515;--gold:#d8aa54;--gold2:#f2ca79;--text:#f7edda;--muted:#9f988d;--line:#3f3422}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(circle at top,#18130b 0,#080808 32%,#080808 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}.shell{width:min(100%,980px);margin:0 auto;padding:env(safe-area-inset-top) 14px calc(26px + env(safe-area-inset-bottom))}.hero{padding:22px 2px 12px;display:flex;align-items:center;gap:13px}.mark{width:54px;height:54px;flex:0 0 54px;border:1px solid #7a5b29;border-radius:17px;background:linear-gradient(145deg,#1d160b,#0d0d0d);display:grid;place-items:center;color:var(--gold2);font-weight:950;letter-spacing:.6px;box-shadow:0 9px 30px #0008}.heroText{min-width:0;flex:1}.hero h1{font-size:22px;line-height:1.08;margin:0 0 4px;font-weight:900}.hero p{margin:0;color:var(--muted);font-size:12px}.updated{margin-top:4px;color:#746d62;font-size:10px}.updateBar{display:flex;gap:9px;align-items:center;margin:0 0 10px}.refreshBtn{width:100%;min-height:48px;border:1px solid #8f682d;border-radius:15px;background:linear-gradient(180deg,#f2ca79,#d8aa54);color:#17120a;font-weight:900;font-size:14px;letter-spacing:.1px;box-shadow:0 8px 22px #0006;touch-action:manipulation}.refreshBtn:active{transform:scale(.99)}.refreshBtn:disabled{opacity:.65}.refreshStatus{display:none;font-size:10px;color:var(--muted);text-align:center;margin:-3px 0 9px}.refreshStatus.show{display:block}.searchWrap{position:sticky;top:0;z-index:10;padding:8px 0 8px;background:linear-gradient(#080808f5,#080808e8 78%,transparent);backdrop-filter:blur(12px)}.search{width:100%;height:48px;border:1px solid var(--line);border-radius:15px;background:#111;color:#fff;padding:0 15px;font-size:16px;outline:none;box-shadow:0 8px 24px #0005}.search::placeholder{color:#716b63}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 11px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{min-height:40px;border:1px solid var(--line);border-radius:999px;background:#101010;color:#d3c5aa;padding:0 14px;font-weight:700;font-size:13px;white-space:nowrap}.tab.on{background:var(--gold2);border-color:var(--gold2);color:#17120a}.summary{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:2px 0 15px}.stat{padding:13px 14px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,#15130f,#0f0f0f)}.stat b{display:block;color:var(--gold2);font-size:22px;line-height:1}.stat span{display:block;margin-top:5px;font-size:10px;color:var(--muted)}.sectionTitle{display:flex;align-items:center;justify-content:space-between;margin:2px 2px 9px}.sectionTitle b{font-size:14px}.sectionTitle span{font-size:10px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr;gap:9px}.card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 14px 14px 15px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,#151515,#0d0d0d);box-shadow:0 8px 24px #0004}.info{min-width:0}.name{font-weight:850;font-size:15px;line-height:1.25;overflow-wrap:anywhere}.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.pill{font-size:10px;color:#b6aa98;border:1px solid #332b20;border-radius:999px;padding:4px 7px;background:#0d0d0d}.stock{flex:0 0 auto;min-width:70px;text-align:right}.stock strong{display:block;font-size:24px;color:var(--gold2);line-height:1}.stock span{display:block;margin-top:5px;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.low{color:#cfba7c!important}.empty{padding:28px 16px;text-align:center;border:1px dashed var(--line);border-radius:17px;color:var(--muted);background:#0e0e0e}.footer{text-align:center;color:#6e675d;font-size:10px;padding:22px 0 6px}.brand{color:#9a8050;font-weight:800}@media(min-width:680px){.shell{padding-left:22px;padding-right:22px}.summary{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:26px}.updateBar{max-width:340px}}
 </style>
 </head>
 <body>
 <main class="shell">
   <header class="hero">
     <div class="mark">TK</div>
-    <div>
+    <div class="heroText">
       <h1>TK Services Shop</h1>
       <p>Browse what is currently available</p>
       <div class="updated" id="updated">Loading stock…</div>
     </div>
   </header>
+
+  <div class="updateBar">
+    <button id="refreshBtn" class="refreshBtn" type="button">Update now</button>
+  </div>
+  <div id="refreshStatus" class="refreshStatus" aria-live="polite"></div>
 
   <div class="searchWrap">
     <input id="search" class="search" type="search" placeholder="Search the shop…" autocomplete="off">
@@ -48,6 +53,10 @@
 let items=[],active='All',lastSignature='',loading=false;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const feeds=[
+  'https://raw.githubusercontent.com/kfairclough/kwong./master/stock/public-stock.json',
+  'https://raw.githubusercontent.com/kfairclough/TKservices./main/shop/public-stock.json'
+];
 function render(){
   const q=$('search').value.trim().toLowerCase();
   const available=items.filter(x=>Number(x.qty)>0);
@@ -62,38 +71,70 @@ function render(){
     return `<article class="card"><div class="info"><div class="name">${esc(x.name)}</div><div class="meta"><span class="pill">${esc(x.category)}</span>${x.ml?`<span class="pill">${Number(x.ml)}ml</span>`:''}${qty<=2?'<span class="pill">Low stock</span>':''}</div></div><div class="stock"><strong class="${qty<=2?'low':''}">${qty}</strong><span>available</span></div></article>`
   }).join(''):'<div class="empty">No matching items are available right now.</div>';
 }
-async function load(){
-  if(loading)return;
-  loading=true;
+function stamp(d){
+  const t=Date.parse(d?.updatedAt||'');
+  return Number.isFinite(t)?t:0;
+}
+async function getFeed(url){
   try{
-    let r=await fetch('https://raw.githubusercontent.com/kfairclough/kwong./master/stock/public-stock.json?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok && !items.length) r=await fetch('public-stock.json?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok)throw new Error();
+    const sep=url.includes('?')?'&':'?';
+    const r=await fetch(url+sep+'v='+Date.now()+'-'+Math.random(),{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
+    if(!r.ok) return null;
     const d=await r.json();
-    const nextItems=Array.isArray(d.items)?d.items:[];
+    return d&&Array.isArray(d.items)?d:null;
+  }catch{return null}
+}
+async function load(manual=false){
+  if(loading)return false;
+  loading=true;
+  const btn=$('refreshBtn');
+  const status=$('refreshStatus');
+  const before=lastSignature;
+  if(manual){
+    btn.disabled=true;
+    btn.textContent='Updating…';
+    status.textContent='Checking for the latest stock…';
+    status.classList.add('show');
+  }
+  try{
+    const results=(await Promise.all(feeds.map(getFeed))).filter(Boolean);
+    if(!results.length)throw new Error('No stock feed available');
+    results.sort((a,b)=>stamp(b)-stamp(a));
+    const d=results[0];
+    const nextItems=d.items;
     const signature=String(d.updatedAt||'')+'|'+JSON.stringify(nextItems);
-    if(signature!==lastSignature){
-      items=nextItems;
-      lastSignature=signature;
-      render();
-    }
+    const changed=signature!==lastSignature;
+    if(changed){items=nextItems;lastSignature=signature;render()}
     $('updated').textContent=d.updatedAt?'Updated '+new Date(d.updatedAt).toLocaleString():'Stock connected';
+    if(manual){
+      status.textContent=before&&changed?'Stock updated.':'Latest stock loaded.';
+      btn.textContent='Updated ✓';
+      setTimeout(()=>{btn.textContent='Update now';status.classList.remove('show')},1800);
+    }
+    return true;
   }catch{
     if(!items.length){
       $('updated').textContent='Stock temporarily unavailable';
       $('grid').innerHTML='<div class="empty">Please try again shortly.</div>';
     }
+    if(manual){
+      status.textContent='Could not fetch stock. Try again.';
+      btn.textContent='Try again';
+    }
+    return false;
   }finally{
     loading=false;
+    btn.disabled=false;
   }
 }
+$('refreshBtn').addEventListener('click',()=>load(true));
 $('search').addEventListener('input',render);
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===btn));render()}));
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)load()});
-window.addEventListener('focus',load);
-window.addEventListener('online',load);
-load();
-setInterval(load,5000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)load(false)});
+window.addEventListener('focus',()=>load(false));
+window.addEventListener('online',()=>load(false));
+load(false);
+setInterval(()=>load(false),5000);
 </script>
 </body>
 </html>
