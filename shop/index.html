@@ -54,8 +54,8 @@ let items=[],active='All',lastSignature='',loading=false;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const feeds=[
-  'https://raw.githubusercontent.com/kfairclough/kwong./master/stock/public-stock.json',
-  'https://raw.githubusercontent.com/kfairclough/TKservices./main/shop/public-stock.json'
+  'public-stock.json',
+  'https://raw.githubusercontent.com/kfairclough/kwong./master/stock/public-stock.json'
 ];
 function render(){
   const q=$('search').value.trim().toLowerCase();
@@ -78,7 +78,7 @@ function stamp(d){
 async function getFeed(url){
   try{
     const sep=url.includes('?')?'&':'?';
-    const r=await fetch(url+sep+'v='+Date.now()+'-'+Math.random(),{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
+    const r=await fetch(url+sep+'v='+Date.now()+'-'+Math.random(),{cache:'no-store'});
     if(!r.ok) return null;
     const d=await r.json();
     return d&&Array.isArray(d.items)?d:null;
@@ -97,7 +97,9 @@ async function load(manual=false){
     status.classList.add('show');
   }
   try{
-    const results=(await Promise.all(feeds.map(getFeed))).filter(Boolean);
+    const local=await getFeed(feeds[0]);
+    const remote=await getFeed(feeds[1]);
+    const results=[local,remote].filter(Boolean);
     if(!results.length)throw new Error('No stock feed available');
     results.sort((a,b)=>stamp(b)-stamp(a));
     const d=results[0];
